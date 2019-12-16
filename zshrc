@@ -1,4 +1,4 @@
-export ZSH="/home/gesterom/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gesterom"
 
@@ -14,6 +14,7 @@ plugins=(
 	extract
 	encode64
 	web-search
+	mvn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -21,8 +22,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:$PATH
 
 export LC_ALL=pl_PL.UTF-8
-setxkbmap pl
 
+alias vim=nvim
 export EDITOR=vim
 export BRWOSER=qutebrowser
 export SHELL=zsh
