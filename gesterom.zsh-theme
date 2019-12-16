@@ -1,6 +1,6 @@
 
 
-if [[ $UID -eq 0 ]]; then
+if [[ "$USER" = "root" ]]; then
 	local user='%{$fg[red]%}%n%{$reset_color%}'
 else
 	local user='%{$fg[blue]%}%n%{$reset_color%}'
@@ -10,7 +10,10 @@ local user='%{$fg[blue]%}%n%{$reset_color%}'
 local hovercraft='%{$terminfo[bold]$fg[magenta]%}%M%{$reset_color%}'
 local dir='%{$fg[yellow]%}%~%{$reset_color%}'
 
-PROMPT=" [ %* ] $user in $hovercraft 
+local return="%(?..------------ %{$fg[red]%}Error [%?]%{$reset_color%} ------------
+)"
+
+PROMPT="$return [ %* ] $user in $hovercraft 
  $dir > "
 
 RPROMPT='$(git_prompt_info)'
